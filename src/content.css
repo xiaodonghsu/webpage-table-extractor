@@ -1,0 +1,51 @@
+.table-extract-hover {
+  outline: 3px solid #2563eb !important;
+  outline-offset: 2px !important;
+  cursor: crosshair !important;
+}
+
+.table-extract-highlight-box {
+  position: fixed !important;
+  z-index: 2147483646 !important;
+  border: 3px solid #2563eb !important;
+  background: rgba(37, 99, 235, 0.12) !important;
+  box-shadow: 0 0 0 99999px rgba(17, 24, 39, 0.16) !important;
+  pointer-events: none !important;
+  box-sizing: border-box !important;
+}
+
+.table-extract-highlight-label {
+  position: fixed !important;
+  z-index: 2147483647 !important;
+  min-width: 130px !important;
+  overflow: hidden !important;
+  padding: 6px 8px !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  background: #2563eb !important;
+  font: 12px/1.25 Arial, sans-serif !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important;
+  pointer-events: none !important;
+  box-sizing: border-box !important;
+}
+
+.table-extract-selected {
+  outline: 3px solid #16a34a !important;
+  outline-offset: 2px !important;
+}
+
+.table-extract-toast {
+  position: fixed !important;
+  z-index: 2147483647 !important;
+  right: 16px !important;
+  bottom: 16px !important;
+  max-width: 360px !important;
+  padding: 10px 12px !important;
+  border-radius: 6px !important;
+  background: #111827 !important;
+  color: #ffffff !important;
+  font: 13px/1.45 Arial, sans-serif !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22) !important;
+}

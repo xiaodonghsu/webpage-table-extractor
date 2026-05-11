@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Table Extract",
+  "version": "1.0.0",
+  "description": "Select table-like content on a page and export it as an XLSX file.",
+  "permissions": ["activeTab", "downloads", "scripting", "storage", "webRequest"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "action": {
+    "default_title": "Table Extract",
+    "default_popup": "src/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.js"],
+      "css": ["src/content.css"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/network-hook.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Table Extract</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="panel">
+      <h1>Table Extract</h1>
+      <div class="tabs" role="tablist">
+        <button id="tab-scan" class="tab-button" type="button" data-tab="scan">扫描表格</button>
+        <button id="tab-network" class="tab-button" type="button" data-tab="network">网络分页</button>
+      </div>
+      <section id="scan-panel" class="tab-panel" data-panel="scan">
+        <p class="hint">扫描页面中的 table 或 ul 列表表格，选择后导出 XLSX。</p>
+        <label class="option-row">
+          <input id="include-hidden" type="checkbox">
+          <span>不可见元素</span>
+        </label>
+        <button id="scan-tables" type="button">扫描表格</button>
+        <section id="results" class="results" hidden>
+          <div class="toolbar">
+            <span id="summary">未扫描</span>
+            <div class="quick-actions">
+              <button id="smart-select" class="text-button" type="button">智能选择</button>
+              <button id="select-all" class="text-button" type="button">全选</button>
+              <button id="select-none" class="text-button" type="button">去选</button>
+            </div>
+          </div>
+          <ul id="table-list" class="table-list"></ul>
+          <button id="export-tables" type="button" disabled>导出 XLSX</button>
+        </section>
+      </section>
+      <section id="network-panel" class="tab-panel" data-panel="network" hidden>
+        <p class="hint">先开始监听，再在页面中点击两次分页按钮。</p>
+        <div class="button-row">
+          <button id="start-network" type="button">开始监听</button>
+          <button id="refresh-captures" class="secondary-button" type="button">刷新捕获</button>
+          <button id="clear-captures" class="secondary-button" type="button">清除捕获</button>
+        </div>
+        <select id="capture-list" class="capture-list">
+          <option value="">暂无捕获请求</option>
+        </select>
+        <textarea id="request-detail" class="request-detail" placeholder="完整请求消息。可将分页变化值改为 {{参数名}}"></textarea>
+        <div class="form-grid">
+          <label>
+            <span>参数名</span>
+            <textarea id="page-param" class="param-list" placeholder="自动识别 {{参数名}}" readonly></textarea>
+          </label>
+          <label>
+            <span>起始值</span>
+            <input id="start-page" type="number" value="0">
+          </label>
+          <label>
+            <span>结束值</span>
+            <input id="end-page" type="number" value="0">
+          </label>
+          <label>
+            <span>步长</span>
+            <input id="page-step" type="number" min="1" value="1">
+          </label>
+        </div>
+        <button id="export-network" type="button" disabled>导出网络分页 XLSX</button>
+      </section>
+      <p id="status" class="status" role="status"></p>
+    </main>
+    <script src="xlsx.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
