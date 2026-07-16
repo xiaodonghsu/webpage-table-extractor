@@ -1,15 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "Table Extract",
+  "name": "Table Extractor",
   "version": "1.0.0",
-  "description": "Select table-like content on a page and export it as an XLSX file.",
+  "description": "将页面中类似表格的内容, 导出为XLSX文件, 或者Markdown格式; 支持分页浏览的表格导出为XLSX文件",
   "permissions": ["activeTab", "downloads", "scripting", "storage", "webRequest"],
   "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "src/background.js"
   },
   "action": {
-    "default_title": "Table Extract",
+    "default_title": "Table Extractor",
     "default_popup": "src/popup.html"
   },
   "content_scripts": [
